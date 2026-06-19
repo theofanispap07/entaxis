@@ -41,8 +41,6 @@
           loop: true,
           autoplay: true,
           margin: 0,
-          animateOut: 'fadeOut',
-          animateIn: 'fadeIn',
           nav: false,
           dots: true,
           autoplayTimeout: 7000,

@@ -419,19 +419,7 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: -1px;
 }
 
-@media (max-width: 767.98px) {
-  .hero-wrap .slider-text h1 {
-    font-size: 2.2rem;
-  }
-  .hero-wrap {
-    height: 75vh;
-    min-height: 500px;
-  }
-  .hero-wrap .slider-item {
-    height: 75vh;
-    min-height: 500px;
-  }
-}
+
 
 /* --------------------------------------------------------------------------
    8. About Us Section
@@ -717,6 +705,94 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* --------------------------------------------------------------------------
+   10.5. PDF Tabs Section
+   -------------------------------------------------------------------------- */
+.pdf-tabs {
+  border: none;
+  justify-content: center;
+  margin-bottom: 2.5rem;
+  gap: 12px;
+}
+
+.pdf-tabs .nav-item .nav-link {
+  border: 1px solid var(--light-border) !important;
+  border-radius: 30px !important;
+  padding: 0.6rem 2.2rem;
+  font-weight: 600;
+  color: var(--text-muted) !important;
+  background: var(--light-surface);
+  transition: var(--transition);
+}
+
+.pdf-tabs .nav-item .nav-link:hover {
+  background: rgba(30, 101, 176, 0.05);
+  border-color: var(--primary) !important;
+  color: var(--primary) !important;
+}
+
+.pdf-tabs .nav-item .nav-link.active {
+  background: var(--primary) !important;
+  color: var(--text-light) !important;
+  border-color: var(--primary) !important;
+  box-shadow: 0 4px 15px var(--primary-glow);
+}
+
+.pdf-card {
+  background: var(--light-surface);
+  border: 1px solid var(--light-border);
+  border-radius: var(--border-radius-lg);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+  transition: var(--transition);
+  max-width: 550px;
+  margin: 0 auto;
+}
+
+.pdf-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(30, 101, 176, 0.08);
+  border-color: rgba(30, 101, 176, 0.2);
+}
+
+.pdf-icon-wrap {
+  width: 75px;
+  height: 75px;
+  background: rgba(220, 53, 69, 0.08);
+  color: #dc3545;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  margin-bottom: 1.5rem;
+  transition: var(--transition);
+}
+
+.pdf-card:hover .pdf-icon-wrap {
+  transform: scale(1.1) rotate(-5deg);
+}
+
+.btn-open-pdf {
+  background: var(--primary) !important;
+  border-color: var(--primary) !important;
+  color: var(--text-light) !important;
+  padding: 0.8rem 2.2rem;
+  border-radius: 30px;
+  font-weight: 700;
+  transition: var(--transition);
+}
+
+.btn-open-pdf:hover {
+  background: var(--primary-hover) !important;
+  border-color: var(--primary-hover) !important;
+  box-shadow: 0 8px 20px var(--primary-glow) !important;
+  transform: translateY(-2px);
+}
+
+#contact-section {
+  padding-top: 3rem;
+}
+
+/* --------------------------------------------------------------------------
    11. Footer
    -------------------------------------------------------------------------- */
 .footer {
@@ -829,4 +905,513 @@ h1, h2, h3, h4, h5, h6 {
 .footer-link:hover {
   color: var(--primary) !important;
   text-decoration: none;
+}
+
+/* ==========================================================================
+   13. Responsive Design - All Breakpoints
+   ========================================================================== */
+
+/* --- Large Desktops (1400px+): Minor refinements --- */
+@media (min-width: 1400px) {
+  .hero-wrap .slider-text h1 {
+    font-size: 4rem;
+  }
+  .contact-left-panel {
+    padding: 3.5rem;
+  }
+  .contact-left-panel h2 {
+    font-size: 2.8rem;
+  }
+}
+
+/* --- Standard Laptops (992px - 1199px) --- */
+@media (max-width: 1199.98px) {
+  .heading-section h2 {
+    font-size: 2.2rem;
+  }
+  .hero-wrap .slider-text h1 {
+    font-size: 3rem;
+  }
+  .contact-left-panel h2 {
+    font-size: 2.2rem;
+  }
+  .contact-left-panel {
+    padding: 2.5rem;
+  }
+  .modern-contact-card {
+    padding: 2rem 1.5rem;
+  }
+}
+
+/* --- Tablets (768px - 991px) --- */
+@media (max-width: 991.98px) {
+  /* Top bar: hide on tablets and below to avoid overlap */
+  .top-wrap {
+    display: none !important;
+  }
+
+  .ftco-section {
+    padding: 4rem 0;
+  }
+
+  /* Hero */
+  .hero-wrap {
+    height: 70vh;
+    min-height: 500px;
+  }
+  .hero-wrap .slider-item {
+    height: 70vh;
+    min-height: 500px;
+  }
+  .hero-wrap .slider-text h1 {
+    font-size: 2.5rem;
+  }
+  .hero-wrap .slider-text h2 {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+  }
+
+  /* About section */
+  .img-video {
+    min-height: 320px;
+    margin-bottom: 2rem;
+  }
+  .heading-section h2 {
+    font-size: 2rem;
+  }
+
+  /* Services */
+  .services .d-block {
+    padding: 2.2rem 1.8rem;
+  }
+
+  /* PDF tabs */
+  .pdf-tabs .nav-item .nav-link {
+    padding: 0.5rem 1.5rem;
+    font-size: 0.9rem;
+  }
+  .pdf-card {
+    max-width: 100%;
+  }
+
+  /* Contact */
+  .contact-left-panel {
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+  }
+  .contact-left-panel h2 {
+    font-size: 2rem;
+  }
+  .modern-contact-card {
+    padding: 2rem 1.5rem;
+  }
+  .modern-contact-card .card-icon-wrap {
+    width: 55px;
+    height: 55px;
+    margin-bottom: 1.2rem;
+  }
+
+  /* Footer */
+  .footer-nav {
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* --- Small Tablets / Large Phones (576px - 767px) --- */
+@media (max-width: 767.98px) {
+  .top-wrap {
+    display: none !important;
+  }
+
+  .ftco-section {
+    padding: 3rem 0;
+  }
+
+  /* Hero */
+  .hero-wrap {
+    height: 65vh;
+    min-height: 450px;
+  }
+  .hero-wrap .slider-item {
+    height: 65vh;
+    min-height: 450px;
+  }
+  .hero-wrap .slider-text h1 {
+    font-size: 2rem;
+  }
+  .hero-wrap .slider-text h2 {
+    font-size: 1rem;
+    letter-spacing: 1.5px;
+    margin-bottom: 1rem;
+  }
+  .hero-wrap .slider-text .btn {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.8rem;
+  }
+
+  /* About section */
+  .img-video {
+    min-height: 280px;
+    margin-bottom: 1.5rem;
+  }
+  .heading-section h2 {
+    font-size: 1.8rem;
+  }
+  .heading-section .subheading {
+    font-size: 0.8rem;
+    letter-spacing: 1.5px;
+  }
+  .services-2 {
+    padding: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  .services-2 .icon {
+    width: 45px;
+    height: 45px;
+    min-width: 45px;
+    font-size: 17px;
+  }
+  .services-2 .text h4 {
+    font-size: 1.05rem;
+  }
+  .services-2 .text p {
+    font-size: 0.85rem;
+  }
+
+  /* Services grid */
+  .services .d-block {
+    padding: 2rem 1.5rem;
+  }
+  .services .icon {
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+    margin-bottom: 1.5rem;
+  }
+  .services .media-body h3 {
+    font-size: 1.2rem;
+  }
+
+  /* PDF tabs */
+  .pdf-tabs {
+    gap: 8px;
+    margin-bottom: 1.5rem;
+  }
+  .pdf-tabs .nav-item .nav-link {
+    padding: 0.45rem 1.2rem;
+    font-size: 0.85rem;
+  }
+  .pdf-card {
+    max-width: 100%;
+  }
+  .pdf-card .p-5 {
+    padding: 2rem !important;
+  }
+  .pdf-icon-wrap {
+    width: 60px;
+    height: 60px;
+    font-size: 26px;
+  }
+
+  /* Contact section */
+  #contact-section {
+    padding-top: 2rem;
+  }
+  .contact-left-panel {
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  .contact-left-panel h2 {
+    font-size: 1.8rem;
+  }
+  .contact-left-panel .panel-subheading {
+    font-size: 0.8rem;
+  }
+  .contact-left-panel p.description {
+    font-size: 0.95rem;
+  }
+  .modern-contact-card {
+    padding: 1.8rem 1.5rem;
+  }
+  .modern-contact-card .card-icon-wrap {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 1rem;
+  }
+  .modern-contact-card h4 {
+    font-size: 1.1rem;
+  }
+
+  /* Footer */
+  .footer .text-md-right {
+    text-align: left !important;
+  }
+  .footer-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+  }
+  .footer-nav a,
+  .footer-link {
+    margin-left: 0;
+    margin-right: 15px;
+    font-size: 0.9rem;
+  }
+}
+
+/* --- Mobile Phones (max-width: 575px) --- */
+@media (max-width: 575.98px) {
+  body {
+    font-size: 14px;
+  }
+
+  .top-wrap {
+    display: none !important;
+  }
+
+  .ftco-section {
+    padding: 2.5rem 0;
+  }
+
+  /* Navbar */
+  #ftco-navbar {
+    padding: 0.6rem 0;
+  }
+  #ftco-navbar .navbar-brand img {
+    height: 38px !important;
+  }
+  #ftco-nav {
+    padding: 1rem;
+  }
+  #ftco-navbar .nav-link {
+    font-size: 0.85rem !important;
+    padding: 0.5rem 1rem !important;
+  }
+
+  /* Hero */
+  .hero-wrap {
+    height: 60vh;
+    min-height: 400px;
+  }
+  .hero-wrap .slider-item {
+    height: 60vh;
+    min-height: 400px;
+  }
+  .hero-wrap .slider-text h1 {
+    font-size: 1.7rem;
+    margin-bottom: 1.2rem;
+  }
+  .hero-wrap .slider-text h2 {
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    margin-bottom: 0.8rem;
+  }
+  .hero-wrap .slider-text .btn {
+    padding: 0.6rem 1.3rem;
+    font-size: 0.75rem;
+  }
+  .owl-dots {
+    bottom: 15px;
+  }
+  .owl-dots .owl-dot {
+    width: 10px;
+    height: 10px;
+    margin: 3px;
+  }
+
+  /* About section */
+  .img-video {
+    min-height: 220px;
+    border-radius: var(--border-radius-md);
+  }
+  .heading-section h2 {
+    font-size: 1.5rem;
+  }
+  .heading-section .subheading {
+    font-size: 0.75rem;
+  }
+  .services-2 {
+    padding: 1rem;
+    margin-bottom: 0.8rem;
+    border-radius: var(--border-radius-sm);
+  }
+  .services-2 .icon {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    font-size: 15px;
+  }
+  .services-2 .text h4 {
+    font-size: 1rem;
+  }
+  .services-2 .text p {
+    font-size: 0.82rem;
+  }
+
+  /* Services grid */
+  .services {
+    margin-bottom: 1rem;
+  }
+  .services .d-block {
+    padding: 1.8rem 1.4rem;
+    border-radius: var(--border-radius-md);
+  }
+  .services .icon {
+    width: 55px;
+    height: 55px;
+    font-size: 22px;
+    border-radius: 14px;
+    margin-bottom: 1.2rem;
+  }
+  .services .media-body h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.7rem;
+  }
+  .services .media-body p {
+    font-size: 0.88rem;
+  }
+
+  /* PDF tabs */
+  .pdf-tabs {
+    gap: 6px;
+    margin-bottom: 1.2rem;
+    flex-wrap: wrap;
+  }
+  .pdf-tabs .nav-item .nav-link {
+    padding: 0.4rem 1rem;
+    font-size: 0.8rem;
+    border-radius: 20px !important;
+  }
+  .pdf-card {
+    max-width: 100%;
+  }
+  .pdf-card.text-center.p-5,
+  .tab-pane .pdf-card {
+    padding: 1.5rem !important;
+  }
+  .pdf-icon-wrap {
+    width: 55px;
+    height: 55px;
+    font-size: 24px;
+    margin-bottom: 1rem;
+  }
+  .pdf-card h3 {
+    font-size: 1.2rem;
+  }
+  .pdf-card .text-muted {
+    font-size: 0.85rem;
+  }
+  .btn-open-pdf {
+    padding: 0.7rem 1.8rem;
+    font-size: 0.8rem;
+  }
+
+  /* Contact section */
+  #contact-section {
+    padding-top: 1.5rem;
+  }
+  #contact-section .mb-5 {
+    margin-bottom: 2rem !important;
+  }
+  .contact-left-panel {
+    padding: 1.8rem 1.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    border-radius: var(--border-radius-md);
+  }
+  .contact-left-panel h2 {
+    font-size: 1.5rem;
+  }
+  .contact-left-panel .panel-subheading {
+    font-size: 0.75rem;
+    letter-spacing: 1.5px;
+  }
+  .contact-left-panel p.description {
+    font-size: 0.88rem;
+    margin-bottom: 1rem;
+  }
+  .contact-left-panel::before {
+    width: 150px;
+    height: 150px;
+    top: -15%;
+    right: -15%;
+  }
+  .modern-contact-card {
+    padding: 1.5rem 1.2rem;
+    border-radius: var(--border-radius-md);
+  }
+  .modern-contact-card .card-icon-wrap {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+  }
+  .modern-contact-card .card-icon-wrap span {
+    font-size: 20px !important;
+  }
+  .modern-contact-card h4 {
+    font-size: 1.05rem;
+    margin-bottom: 0.5rem;
+  }
+  .modern-contact-card p,
+  .modern-contact-card a {
+    font-size: 0.88rem;
+  }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+  }
+  .footer .text-md-right {
+    text-align: center !important;
+  }
+  .footer .footer-logo-wrap {
+    display: flex;
+    justify-content: center;
+  }
+  .footer p {
+    max-width: 100% !important;
+    text-align: center;
+  }
+  .footer-nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0;
+  }
+  .footer-nav a,
+  .footer-link {
+    margin: 0 8px;
+    font-size: 0.88rem;
+  }
+  .footer .copyright {
+    font-size: 0.8rem;
+  }
+
+  /* Divider */
+  #contact-section hr.my-5 {
+    margin-top: 2rem !important;
+    margin-bottom: 2rem !important;
+  }
+}
+
+/* --- Extra Small Phones (max-width: 360px) --- */
+@media (max-width: 360px) {
+  .hero-wrap .slider-text h1 {
+    font-size: 1.4rem;
+  }
+  .hero-wrap .slider-text h2 {
+    font-size: 0.75rem;
+  }
+  .pdf-tabs .nav-item .nav-link {
+    padding: 0.35rem 0.7rem;
+    font-size: 0.75rem;
+  }
+  .heading-section h2 {
+    font-size: 1.3rem;
+  }
+  .contact-left-panel h2 {
+    font-size: 1.3rem;
+  }
 }
