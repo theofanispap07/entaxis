@@ -1,0 +1,832 @@
+/* ==========================================================================
+   En Taxis - Modern & Premium Stylesheet Redesign
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Design Tokens & CSS Variables
+   -------------------------------------------------------------------------- */
+:root {
+  --primary: #1e65b0;
+  --primary-hover: #144b85;
+  --primary-glow: rgba(30, 101, 176, 0.25);
+  
+  --dark-bg: #0a0d14;
+  --dark-surface: #111622;
+  --dark-border: rgba(255, 255, 255, 0.07);
+  
+  --light-bg: #f4f6fa;
+  --light-surface: #ffffff;
+  --light-border: rgba(0, 0, 0, 0.05);
+  
+  --text-dark: #1f242e;
+  --text-light: #ffffff;
+  --text-muted: #687182;
+  --text-muted-light: rgba(255, 255, 255, 0.7);
+  
+  --font-family: 'Montserrat', sans-serif;
+  --border-radius-sm: 8px;
+  --border-radius-md: 12px;
+  --border-radius-lg: 20px;
+  --transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* --------------------------------------------------------------------------
+   1.5. Layout Width Overrides for Wide Screens
+   -------------------------------------------------------------------------- */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1300px;
+  }
+}
+@media (min-width: 1600px) {
+  .container {
+    max-width: 1540px;
+  }
+}
+@media (min-width: 2000px) {
+  .container {
+    max-width: 1800px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   2. Core Document Settings
+   -------------------------------------------------------------------------- */
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--light-bg);
+  color: var(--text-dark);
+  font-size: 15px;
+  line-height: 1.7;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+a:hover, a:focus {
+  color: var(--primary-hover);
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family);
+  font-weight: 700;
+  color: var(--text-dark);
+  line-height: 1.3;
+}
+
+/* --------------------------------------------------------------------------
+   3. Flaticon to Font Awesome 4.7 Mappings
+   -------------------------------------------------------------------------- */
+[class^="flaticon-"]::before, 
+[class*=" flaticon-"]::before {
+  font-family: "FontAwesome" !important;
+  font-style: normal;
+  font-weight: normal;
+  display: inline-block;
+  text-decoration: inherit;
+  text-align: center;
+  transition: var(--transition);
+}
+
+.flaticon-wealth::before { content: "\f201"; }       /* fa-line-chart */
+.flaticon-accountant::before { content: "\f007"; }   /* fa-user */
+.flaticon-teamwork::before { content: "\f0c0"; }     /* fa-users */
+.flaticon-accounting::before { content: "\f1ec"; }   /* fa-calculator */
+.flaticon-accounting-1::before { content: "\f0f6"; } /* fa-file-text-o */
+.flaticon-tax::before { content: "\f15c"; }          /* fa-file-text */
+.flaticon-loan::before { content: "\f155"; }         /* fa-usd */
+.flaticon-budget::before { content: "\f200"; }       /* fa-pie-chart */
+
+/* --------------------------------------------------------------------------
+   4. Custom Scrollbars & Utilities
+   -------------------------------------------------------------------------- */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--dark-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--primary) 0%, var(--primary-hover) 100%);
+  border-radius: 10px;
+  border: 2px solid var(--dark-bg);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+.bg-light {
+  background-color: var(--light-bg) !important;
+}
+
+.ftco-section {
+  padding: 6.5rem 0;
+  position: relative;
+}
+
+.ftco-no-pt {
+  padding-top: 0 !important;
+}
+
+.ftco-no-pb {
+  padding-bottom: 0 !important;
+}
+
+/* --------------------------------------------------------------------------
+   5. Buttons
+   -------------------------------------------------------------------------- */
+.btn {
+  padding: 0.8rem 2rem;
+  font-weight: 700;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition: var(--transition);
+}
+
+.btn-white {
+  background: var(--text-light);
+  color: var(--text-dark);
+  border: 1px solid var(--text-light);
+}
+
+.btn-white:hover {
+  background: var(--primary);
+  color: var(--text-light);
+  border-color: var(--primary);
+  box-shadow: 0 10px 25px var(--primary-glow);
+  transform: translateY(-2px);
+}
+
+/* --------------------------------------------------------------------------
+   6. Navigation Header
+   -------------------------------------------------------------------------- */
+.top-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 45px;
+  background: var(--dark-bg) !important;
+  border-bottom: 1px solid var(--dark-border);
+  z-index: 1060;
+  font-size: 0.82rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+}
+
+.top-wrap a {
+  color: var(--text-muted-light) !important;
+}
+
+.top-wrap a:hover {
+  color: var(--primary) !important;
+}
+
+.top-wrap .icon-green {
+  color: var(--primary);
+}
+
+#ftco-navbar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 1050;
+  background: rgba(18, 24, 19, 0.85) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--dark-border);
+  transition: var(--transition);
+  padding: 0.9rem 0;
+  top: 45px;
+}
+
+#ftco-navbar.scrolled {
+  top: 0 !important;
+  padding: 0.6rem 0;
+  background: rgba(10, 13, 20, 0.96) !important;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+#ftco-navbar .logo-icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(30, 101, 176, 0.12);
+  padding: 7px;
+  border-radius: var(--border-radius-sm);
+  transition: var(--transition);
+}
+
+#ftco-navbar .navbar-brand:hover .logo-icon-wrap {
+  background: var(--primary);
+  transform: rotate(5deg) scale(1.05);
+}
+
+#ftco-navbar .navbar-brand:hover .logo-icon-wrap svg path {
+  stroke: var(--text-light);
+}
+
+#ftco-navbar .logo-text {
+  font-size: 1.55rem;
+  letter-spacing: -0.5px;
+}
+
+#ftco-navbar .nav-link {
+  color: var(--text-muted-light) !important;
+  font-weight: 600 !important;
+  font-size: 0.9rem !important;
+  letter-spacing: 0.5px;
+  padding: 0.5rem 1.1rem !important;
+  border-radius: 30px;
+  transition: var(--transition);
+}
+
+#ftco-navbar .nav-link:hover {
+  color: var(--primary) !important;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+#ftco-navbar .nav-item.active .nav-link {
+  color: var(--text-light) !important;
+  background: var(--primary) !important;
+  box-shadow: 0 4px 15px var(--primary-glow);
+}
+
+#ftco-navbar .btn-cta {
+  border: 2px solid var(--primary) !important;
+  color: var(--text-light) !important;
+  background: transparent !important;
+  padding: 0.5rem 1.3rem !important;
+  border-radius: 30px !important;
+  font-weight: 700 !important;
+  font-size: 0.85rem !important;
+  transition: var(--transition) !important;
+}
+
+#ftco-navbar .btn-cta:hover {
+  background: var(--primary) !important;
+  box-shadow: 0 4px 15px var(--primary-glow) !important;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 991.98px) {
+  #ftco-navbar {
+    top: 0 !important;
+    background: rgba(10, 13, 20, 0.98) !important;
+  }
+  
+  #ftco-nav {
+    background: rgba(17, 22, 34, 0.98);
+    border-radius: var(--border-radius-md);
+    margin-top: 10px;
+    padding: 1.5rem;
+    border: 1px solid var(--dark-border);
+  }
+  
+  #ftco-navbar .navbar-nav {
+    align-items: stretch !important;
+  }
+  
+  #ftco-navbar .nav-item {
+    margin: 6px 0 !important;
+  }
+  
+  #ftco-navbar .nav-link {
+    padding: 0.6rem 1.2rem !important;
+    border-radius: var(--border-radius-sm) !important;
+  }
+  
+  #ftco-navbar .btn-cta {
+    display: block;
+    text-align: center;
+    margin-top: 8px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   7. Hero Slider Section
+   -------------------------------------------------------------------------- */
+.hero-wrap {
+  position: relative;
+  height: 85vh;
+  min-height: 600px;
+  overflow: hidden;
+  background-color: var(--dark-bg);
+}
+
+/* Fallback if Owl Carousel doesn't initialize: lay slides nicely */
+.hero-wrap .home-slider {
+  position: relative;
+  height: 100%;
+}
+
+.hero-wrap .home-slider:not(.owl-loaded) .slider-item:not(:first-child) {
+  display: none !important;
+}
+
+.owl-carousel .owl-stage, .owl-carousel .owl-stage-outer {
+  height: 100%;
+}
+
+.owl-dots {
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  z-index: 10;
+}
+
+.owl-dots .owl-dot {
+  width: 12px;
+  height: 12px;
+  margin: 5px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4) !important;
+  display: inline-block;
+  outline: none;
+  transition: var(--transition);
+}
+
+.owl-dots .owl-dot.active {
+  background: var(--primary) !important;
+  transform: scale(1.2);
+}
+
+.hero-wrap .slider-item {
+  height: 85vh;
+  min-height: 600px;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.hero-wrap .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  content: '';
+  background: linear-gradient(135deg, rgba(10, 13, 20, 0.8) 0%, rgba(10, 13, 20, 0.4) 100%);
+  z-index: 1;
+}
+
+.hero-wrap .container {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+}
+
+.hero-wrap .slider-text {
+  height: 100%;
+  color: var(--text-light);
+}
+
+.hero-wrap .slider-text h2 {
+  color: var(--primary);
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 1.5rem;
+}
+
+.hero-wrap .slider-text h1 {
+  color: var(--text-light);
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 2rem;
+  letter-spacing: -1px;
+}
+
+@media (max-width: 767.98px) {
+  .hero-wrap .slider-text h1 {
+    font-size: 2.2rem;
+  }
+  .hero-wrap {
+    height: 75vh;
+    min-height: 500px;
+  }
+  .hero-wrap .slider-item {
+    height: 75vh;
+    min-height: 500px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   8. About Us Section
+   -------------------------------------------------------------------------- */
+.heading-section .subheading {
+  font-size: 0.9rem;
+  display: block;
+  font-weight: 700;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 0.8rem;
+}
+
+.heading-section h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: var(--text-dark);
+}
+
+.img-video {
+  border-radius: var(--border-radius-lg);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  min-height: 380px;
+  overflow: hidden;
+  border: 1px solid var(--light-border);
+}
+
+.img-video::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(180deg, rgba(30, 101, 176, 0.15) 0%, rgba(10, 13, 20, 0.4) 100%);
+}
+
+.services-2 {
+  background: var(--light-surface);
+  border-radius: var(--border-radius-md);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+  border: 1px solid var(--light-border);
+  transition: var(--transition);
+}
+
+.services-2:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(30, 101, 176, 0.08);
+  border-color: rgba(30, 101, 176, 0.15);
+}
+
+.services-2 .icon {
+  width: 55px;
+  height: 55px;
+  min-width: 55px;
+  background: rgba(30, 101, 176, 0.06);
+  border-radius: 50%;
+  color: var(--primary);
+  font-size: 20px;
+  transition: var(--transition);
+}
+
+.services-2:hover .icon {
+  background: var(--primary);
+  color: var(--text-light);
+}
+
+.services-2 .text h4 {
+  font-size: 1.15rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.services-2 .text p {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   9. Services Grid Section
+   -------------------------------------------------------------------------- */
+.services {
+  margin-bottom: 2rem;
+}
+
+.services .d-block {
+  background: var(--light-surface);
+  border-radius: var(--border-radius-lg);
+  padding: 2.8rem 2.2rem;
+  height: 100%;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.03);
+  border: 1px solid var(--light-border);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.services .d-block::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--primary);
+  transform: scaleX(0);
+  transition: var(--transition);
+  transform-origin: left;
+}
+
+.services .d-block:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px rgba(30, 101, 176, 0.1);
+  border-color: rgba(30, 101, 176, 0.2);
+}
+
+.services .d-block:hover::after {
+  transform: scaleX(1);
+}
+
+.services .icon {
+  width: 70px;
+  height: 70px;
+  background: rgba(30, 101, 176, 0.08);
+  border-radius: 18px;
+  color: var(--primary);
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+  transition: var(--transition);
+}
+
+.services .d-block:hover .icon {
+  background: var(--primary);
+  color: var(--text-light);
+  transform: scale(1.1) rotate(5deg);
+}
+
+.services .media-body h3 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.services .media-body p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   10. Contact Section
+   -------------------------------------------------------------------------- */
+.contact-left-panel {
+  background: linear-gradient(135deg, #121b2d 0%, #0a0d14 100%);
+  border-radius: var(--border-radius-lg);
+  padding: 3rem;
+  color: var(--text-light);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.contact-left-panel::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  right: -20%;
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, rgba(30, 101, 176, 0.18) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.contact-left-panel .panel-subheading {
+  color: var(--primary);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.85rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.contact-left-panel h2 {
+  font-weight: 700;
+  color: var(--text-light);
+  font-size: 2.5rem;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+.contact-left-panel p.description {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.modern-contact-card {
+  background: var(--light-surface);
+  border: 1px solid var(--light-border);
+  border-radius: var(--border-radius-lg);
+  padding: 2.5rem 2rem;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.02);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.modern-contact-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px rgba(30, 101, 176, 0.08);
+  border-color: rgba(30, 101, 176, 0.2);
+}
+
+.modern-contact-card .card-icon-wrap {
+  width: 65px;
+  height: 65px;
+  background: rgba(30, 101, 176, 0.06);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+  margin-bottom: 1.8rem;
+}
+
+.modern-contact-card .card-icon-wrap span {
+  color: var(--primary);
+  transition: var(--transition);
+}
+
+.modern-contact-card:hover .card-icon-wrap {
+  background: var(--primary);
+  transform: scale(1.1);
+}
+
+.modern-contact-card:hover .card-icon-wrap span {
+  color: var(--text-light) !important;
+}
+
+.modern-contact-card h4 {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--text-dark);
+  margin-bottom: 0.8rem;
+}
+
+.modern-contact-card p,
+.modern-contact-card a {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 0;
+  transition: var(--transition);
+}
+
+.modern-contact-card a:hover {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+/* --------------------------------------------------------------------------
+   11. Footer
+   -------------------------------------------------------------------------- */
+.footer {
+  background: var(--dark-bg);
+  border-top: 1px solid var(--dark-border);
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.92rem;
+}
+
+.footer h2.footer-heading {
+  color: var(--text-light);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.footer p {
+  line-height: 1.7;
+}
+
+.footer-nav a {
+  color: rgba(255, 255, 255, 0.8) !important;
+  margin-left: 20px;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.footer-nav a:hover {
+  color: var(--primary) !important;
+}
+
+.footer .copyright {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.85rem;
+}
+
+/* --------------------------------------------------------------------------
+   12. Preloader (Loader)
+   -------------------------------------------------------------------------- */
+#ftco-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--dark-bg);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+#ftco-loader.fullscreen {
+  opacity: 1;
+  visibility: visible;
+}
+
+#ftco-loader.fullscreen.hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
+#ftco-loader .circular {
+  animation: rotate 2s linear infinite;
+  height: 50px;
+  width: 50px;
+}
+
+#ftco-loader .path-bg {
+  stroke: rgba(255, 255, 255, 0.05);
+}
+
+#ftco-loader .path {
+  stroke: var(--primary);
+  stroke-linecap: round;
+  animation: dash 1.5s ease-in-out infinite;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -35px;
+  }
+  100% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -124px;
+  }
+}
+
+.footer-link {
+  color: rgba(255, 255, 255, 0.8) !important;
+  margin-left: 20px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: var(--transition);
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  color: var(--primary) !important;
+  text-decoration: none;
+}
