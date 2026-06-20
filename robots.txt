@@ -1,9 +1,10 @@
 # robots.txt for ENTAXIS - Λογιστικό Γραφείο
-# https://www.entaxis.gr
+# https://www.entaxiskilkis.gr
 
 User-agent: *
 Allow: /
 Disallow: /prepros-6.config
 
 # Sitemap
-Sitemap: https://www.entaxis.gr/sitemap.xml
+Sitemap: https://www.entaxiskilkis.gr/sitemap.xml
+
