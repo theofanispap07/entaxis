@@ -33,21 +33,9 @@
 /* --------------------------------------------------------------------------
    1.5. Layout Width Overrides for Wide Screens
    -------------------------------------------------------------------------- */
-@media (min-width: 1200px) {
+@media (min-width: 1440px) {
   .container {
-    max-width: 1300px;
-  }
-}
-
-@media (min-width: 1600px) {
-  .container {
-    max-width: 1540px;
-  }
-}
-
-@media (min-width: 2000px) {
-  .container {
-    max-width: 1800px;
+    max-width: 1400px;
   }
 }
 
