@@ -94,10 +94,10 @@ h6 {
 }
 
 /* --------------------------------------------------------------------------
-   3. Flaticon to Font Awesome 4.7 Mappings
+   3. Custom Vector Icon Mappings
    -------------------------------------------------------------------------- */
-[class^="flaticon-"]::before,
-[class*=" flaticon-"]::before {
+[class^="et-icon-"]::before,
+[class*=" et-icon-"]::before {
   font-family: "FontAwesome" !important;
   font-style: normal;
   font-weight: normal;
@@ -107,42 +107,42 @@ h6 {
   transition: var(--transition);
 }
 
-.flaticon-wealth::before {
+.et-icon-wealth::before {
   content: "\f201";
 }
 
 /* fa-line-chart */
-.flaticon-accountant::before {
+.et-icon-accountant::before {
   content: "\f007";
 }
 
 /* fa-user */
-.flaticon-teamwork::before {
+.et-icon-teamwork::before {
   content: "\f0c0";
 }
 
 /* fa-users */
-.flaticon-accounting::before {
+.et-icon-accounting::before {
   content: "\f1ec";
 }
 
 /* fa-calculator */
-.flaticon-accounting-1::before {
+.et-icon-accounting-1::before {
   content: "\f0f6";
 }
 
 /* fa-file-text-o */
-.flaticon-tax::before {
+.et-icon-tax::before {
   content: "\f15c";
 }
 
 /* fa-file-text */
-.flaticon-loan::before {
+.et-icon-loan::before {
   content: "\f155";
 }
 
 /* fa-usd */
-.flaticon-budget::before {
+.et-icon-budget::before {
   content: "\f200";
 }
 
@@ -173,16 +173,16 @@ h6 {
   background-color: var(--light-bg) !important;
 }
 
-.ftco-section {
+.et-section {
   padding: 6.5rem 0;
   position: relative;
 }
 
-.ftco-no-pt {
+.et-no-pt {
   padding-top: 0 !important;
 }
 
-.ftco-no-pb {
+.et-no-pb {
   padding-bottom: 0 !important;
 }
 
@@ -243,7 +243,7 @@ h6 {
   color: var(--primary);
 }
 
-#ftco-navbar {
+#et-navbar {
   position: fixed;
   left: 0;
   right: 0;
@@ -257,14 +257,14 @@ h6 {
   top: 45px;
 }
 
-#ftco-navbar.scrolled {
+#et-navbar.scrolled {
   top: 0 !important;
   padding: 0.6rem 0;
   background: rgba(10, 13, 20, 0.96) !important;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
 }
 
-#ftco-navbar .logo-icon-wrap {
+#et-navbar .logo-icon-wrap {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -274,21 +274,21 @@ h6 {
   transition: var(--transition);
 }
 
-#ftco-navbar .navbar-brand:hover .logo-icon-wrap {
+#et-navbar .navbar-brand:hover .logo-icon-wrap {
   background: var(--primary);
   transform: rotate(5deg) scale(1.05);
 }
 
-#ftco-navbar .navbar-brand:hover .logo-icon-wrap svg path {
+#et-navbar .navbar-brand:hover .logo-icon-wrap svg path {
   stroke: var(--text-light);
 }
 
-#ftco-navbar .logo-text {
+#et-navbar .logo-text {
   font-size: 1.55rem;
   letter-spacing: -0.5px;
 }
 
-#ftco-navbar .nav-link {
+#et-navbar .nav-link {
   color: var(--text-muted-light) !important;
   font-weight: 600 !important;
   font-size: 0.9rem !important;
@@ -298,18 +298,18 @@ h6 {
   transition: var(--transition);
 }
 
-#ftco-navbar .nav-link:hover {
+#et-navbar .nav-link:hover {
   color: var(--primary) !important;
   background: rgba(255, 255, 255, 0.05);
 }
 
-#ftco-navbar .nav-item.active .nav-link {
+#et-navbar .nav-item.active .nav-link {
   color: var(--text-light) !important;
   background: var(--primary) !important;
   box-shadow: 0 4px 15px var(--primary-glow);
 }
 
-#ftco-navbar .btn-cta {
+#et-navbar .btn-cta {
   border: 2px solid var(--primary) !important;
   color: var(--text-light) !important;
   background: transparent !important;
@@ -320,19 +320,19 @@ h6 {
   transition: var(--transition) !important;
 }
 
-#ftco-navbar .btn-cta:hover {
+#et-navbar .btn-cta:hover {
   background: var(--primary) !important;
   box-shadow: 0 4px 15px var(--primary-glow) !important;
   transform: translateY(-2px);
 }
 
 @media (max-width: 991.98px) {
-  #ftco-navbar {
+  #et-navbar {
     top: 0 !important;
     background: rgba(10, 13, 20, 0.98) !important;
   }
 
-  #ftco-nav {
+  #et-nav {
     background: rgba(17, 22, 34, 0.98);
     border-radius: var(--border-radius-md);
     margin-top: 10px;
@@ -340,20 +340,20 @@ h6 {
     border: 1px solid var(--dark-border);
   }
 
-  #ftco-navbar .navbar-nav {
+  #et-navbar .navbar-nav {
     align-items: stretch !important;
   }
 
-  #ftco-navbar .nav-item {
+  #et-navbar .nav-item {
     margin: 6px 0 !important;
   }
 
-  #ftco-navbar .nav-link {
+  #et-navbar .nav-link {
     padding: 0.6rem 1.2rem !important;
     border-radius: var(--border-radius-sm) !important;
   }
 
-  #ftco-navbar .btn-cta {
+  #et-navbar .btn-cta {
     display: block;
     text-align: center;
     margin-top: 8px;
@@ -873,7 +873,7 @@ h6 {
 /* --------------------------------------------------------------------------
    12. Preloader (Loader / Splash Screen)
    -------------------------------------------------------------------------- */
-#ftco-loader {
+#et-loader {
   position: fixed;
   top: 0;
   left: 0;
@@ -887,17 +887,17 @@ h6 {
   transition: opacity 0.6s cubic-bezier(0.165, 0.84, 0.44, 1), visibility 0.6s ease;
 }
 
-#ftco-loader.fullscreen {
+#et-loader.fullscreen {
   opacity: 1;
   visibility: visible;
 }
 
-#ftco-loader.fullscreen.hide {
+#et-loader.fullscreen.hide {
   opacity: 0;
   visibility: hidden;
 }
 
-#ftco-loader .splash-logo-container {
+#et-loader .splash-logo-container {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -905,7 +905,7 @@ h6 {
   padding: 15px;
 }
 
-#ftco-loader .splash-logo-icon {
+#et-loader .splash-logo-icon {
   width: 60px;
   height: 60px;
   overflow: hidden;
@@ -915,7 +915,7 @@ h6 {
   animation: logoFadeInScale 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) 0.1s forwards;
 }
 
-#ftco-loader .splash-logo-img {
+#et-loader .splash-logo-img {
   height: 60px;
   width: auto;
   max-width: none;
@@ -926,7 +926,7 @@ h6 {
   display: block;
 }
 
-#ftco-loader .splash-logo-text-wrap {
+#et-loader .splash-logo-text-wrap {
   display: inline-flex;
   align-items: center;
   font-family: var(--font-family);
@@ -937,11 +937,11 @@ h6 {
   line-height: 1;
 }
 
-#ftco-loader .splash-logo-text {
+#et-loader .splash-logo-text {
   white-space: nowrap;
 }
 
-#ftco-loader .splash-cursor {
+#et-loader .splash-cursor {
   display: inline-block;
   width: 3px;
   height: 34px;
@@ -1026,7 +1026,7 @@ h6 {
     display: none !important;
   }
 
-  .ftco-section {
+  .et-section {
     padding: 4rem 0;
   }
 
@@ -1107,7 +1107,7 @@ h6 {
     display: none !important;
   }
 
-  .ftco-section {
+  .et-section {
     padding: 3rem 0;
   }
 
@@ -1335,24 +1335,24 @@ h6 {
     display: none !important;
   }
 
-  .ftco-section {
+  .et-section {
     padding: 2.5rem 0;
   }
 
   /* Navbar */
-  #ftco-navbar {
+  #et-navbar {
     padding: 0.6rem 0;
   }
 
-  #ftco-navbar .navbar-brand img {
+  #et-navbar .navbar-brand img {
     height: 38px !important;
   }
 
-  #ftco-nav {
+  #et-nav {
     padding: 1rem;
   }
 
-  #ftco-navbar .nav-link {
+  #et-navbar .nav-link {
     font-size: 0.85rem !important;
     padding: 0.5rem 1rem !important;
   }

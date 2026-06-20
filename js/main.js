@@ -30,7 +30,7 @@
 
   function checkDismissSplash() {
     if (windowLoaded && isTypingComplete) {
-      var loader = $('#ftco-loader');
+      var loader = $('#et-loader');
       if (loader.length > 0) {
         // Minimal delay after typing finishes to let the final state linger briefly
         setTimeout(function() {
@@ -55,7 +55,7 @@
   $(document).ready(function() {
     // 2. Active scroll state for Navbar
     var checkScroll = function() {
-      var navbar = $('#ftco-navbar');
+      var navbar = $('#et-navbar');
       if (navbar.length > 0) {
         if ($(window).scrollTop() > 30) {
           navbar.addClass('scrolled');
@@ -140,3 +140,4 @@
   });
 
 })(jQuery);
+
